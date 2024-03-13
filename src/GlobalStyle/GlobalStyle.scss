@@ -1,0 +1,195 @@
+%base-style {
+    display: flex;
+    align-items: center;
+}
+
+
+@mixin TextStyle($weight: 500, $size: 36px, $color: #00240f, $align: center, $textDecoration: none) {
+    font-family: var(--font-family);
+    font-weight: $weight;
+    font-size: $size;
+    line-height: 161%;
+    text-align: $align;
+    color: $color;
+    text-decoration: $textDecoration;
+
+}
+
+@mixin ButtonStyle($color: #fff, $size: 18px, $width: 103px, $height: 40px, $background: #ec0000, $fWeight: 500, $padding: 5px 10px) {
+    border-radius: 25px;
+    padding: $padding;
+    width: $width;
+    height: $height;
+    background: $background;
+    font-family: var(--font-family);
+    font-weight: $fWeight;
+    font-size: $size;
+    text-align: center;
+    color: $color;
+    border: none;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+
+    section {
+        @extend %base-style;
+        width: 90%;
+        height: 100%;
+        justify-content: space-between
+    }
+
+    .logo {
+        @extend %base-style;
+
+        h1 {
+            @include TextStyle(500, 20px)
+        }
+    }
+
+    nav {
+        @extend %base-style;
+        width: 370px;
+        display: flex;
+        justify-content: space-between;
+
+        a {
+            @include TextStyle(500, 19px, #00240f)
+        }
+
+        .active {
+            @include TextStyle(500, 19px, #ec0000)
+        }
+
+        button {
+            @include ButtonStyle
+        }
+    }
+}
+
+.home {
+    width: 91%;
+    height: 100vh;
+    @extend %base-style;
+    justify-content: center;
+    flex-direction: column;
+
+    section {
+        width: 100%;
+        height: 90%;
+        @extend %base-style;
+        justify-content: space-between;
+    }
+
+    .home_title {
+
+        padding: 0px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+    }
+
+    h1 {
+        @include TextStyle(700, 60px, #00240f)
+    }
+
+    h3 {
+        @include TextStyle(500, 36px, #00240f, none);
+        width: 550px;
+    }
+
+    button {
+        @include ButtonStyle(#fff, 24px, 182px, 40px);
+        box-shadow: -10px 20px 40px 0 rgba(236, 0, 0, 0.16);
+    }
+
+    .home_title_img {
+        display: flex;
+        justify-content: center;
+        width: 740px;
+    }
+
+    .home_title_light {
+        width: 630px;
+        height: 549px;
+        position: absolute;
+        background: linear-gradient(270deg, #fff 20.1%, #ffffffd2 36.2%, #ffffff60 55.65%, #ffffff00 90.05%);
+        transform: rotate(-180deg);
+    }
+
+}
+
+.pizzas {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .pizzas_content {
+        width: 95%;
+        @extend %base-style;
+        flex-direction: column;
+    }
+
+
+    .pizza_titleH1 {
+        @include TextStyle(600, 36px, #00240f)
+    }
+
+    .pizzas_types {
+        display: flex;
+        gap: 20px
+    }
+
+    .pizza {
+        @extend %base-style;
+        transition: 0.3s;
+        justify-content: center;
+        flex-direction: column;
+        gap: 10px;
+        border: 1px solid #bdbdbd;
+        border-radius: 180px 180px 30px 30px;
+        padding: 19px 5px;
+        width: 290px;
+        height: 529px;
+
+        h2 {
+            @include TextStyle(600, 24px, #000);
+        }
+
+        p {
+            @include TextStyle(300, 14px, #333);
+            width: 250px;
+        }
+
+        h1 {
+            @include TextStyle(600, 24px, #05a84b);
+        }
+
+        .pizza_regular {
+            @extend %base-style;
+            gap: 60%;
+            border: 1px solid #4f4f4f;
+            border-radius: 25px;
+            padding: 9px 16px;
+            width: 200px;
+            height: 20px;
+            background: #fff;
+
+            h4 {
+                @include TextStyle(400, 16px, #333);
+            }
+        }
+    }
+
+    .pizza:hover {
+        box-shadow: -10px 20px 40px -1px rgba(0, 0, 0, 0.2);
+    }
+
+    button {
+        @include ButtonStyle(#fff, 16px, 230px, 40px, #ec0000, 500, 10px 24px)
+    }
+}
