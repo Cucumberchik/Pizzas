@@ -1,4 +1,4 @@
-import './App.css'
+import './App.scss'
 import "./GlobalStyle/GlobalStyle.scss"
 import Header from './components/Navbar/Header'
 import MainRoutes from './routes/MainRoutes'
