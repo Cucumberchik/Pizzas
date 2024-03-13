@@ -193,3 +193,29 @@ header {
         @include ButtonStyle(#fff, 16px, 230px, 40px, #ec0000, 500, 10px 24px)
     }
 }
+
+.basket {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    section {
+        width: 90%;
+
+    }
+
+    .bascet_pizza {
+        display: flex;
+        justify-content: space-between;
+        width: 800px;
+        height: 70px;
+
+        h2 {
+            @include TextStyle(500, 23px, #00240f, none)
+        }
+
+        h4 {
+            @include TextStyle(400, 18px, #3f3f3f, none)
+        }
+    }
+}

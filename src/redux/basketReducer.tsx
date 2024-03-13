@@ -21,6 +21,8 @@ export default function basketReducer(state = initial, action: AddPizzaAction) {
     switch (action.type) {
         case TYPES_PIZZA.ADD_BASKET:
             return { ...state, pizza: action.payload };
+        case TYPES_PIZZA.DELETE_BASKET:
+            return { ...state, pizza: action.payload };
         default:
             return state;
     }
